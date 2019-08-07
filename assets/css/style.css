@@ -1,0 +1,16 @@
+body{
+    background-color:#E6EEFF;
+}
+
+.navbar {
+    float: right;  
+}
+
+.jumbotron {
+    background-color: aliceblue;
+}
+
+
+#contact {
+    text-align: center;
+}
