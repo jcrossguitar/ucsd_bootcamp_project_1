@@ -12,5 +12,26 @@ body{
 
 
 #contact {
-    text-align: center;
+    align-content: center;
 }
+
+html{
+    font-family: 'Baumans', cursive;
+ }
+ #myCarousel {
+    height: auto;
+    width: auto;
+    overflow: hidden;
+  }
+  .center{
+    display: flex;
+    justify-content: center;
+    background-color:black;
+ }
+  .slide{
+      width: 50%;
+      border: 20px solid black;
+  }
+  footer{
+      min-height: 200px;
+  }
