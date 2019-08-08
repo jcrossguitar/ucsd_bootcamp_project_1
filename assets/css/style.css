@@ -1,3 +1,4 @@
+
 html{ 
     font-family: 'Baumans', cursive;
 }
@@ -21,3 +22,24 @@ html{
   footer{
       min-height: 200px;
   }
+body{
+    background-color:#E6EEFF;
+}
+
+.navbar {
+    float: right;  
+}
+
+.jumbotron {
+    background-color: aliceblue;
+}
+
+
+#contact {
+    text-align: center;
+  
+  
+  
+  
+  
+}
