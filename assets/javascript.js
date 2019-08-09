@@ -36,3 +36,33 @@ google.maps.event.addListener(ac, 'places_changed', function () {
     console.log(place.url);
     console.log(place.geometry.location);
 });
+
+
+
+var firebaseConfig = {
+    apiKey: "AIzaSyD_y8T7JQwWOiJl6IKjqONc38NCSZsyxjo",
+    authDomain: "project1-d0975.firebaseapp.com",
+    databaseURL: "https://project1-d0975.firebaseio.com",
+    projectId: "project1-d0975",
+    storageBucket: "",
+    messagingSenderId: "1071282302812",
+    appId: "1:1071282302812:web:b82c38f60e24a6ea"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  var name = "";
+  var email = "";
+  var message = "";
+
+  $("#addEmail").on("click", function(){
+      name = $("#nameInput").val().trim();
+      email = $("#emailInput").val().trim();
+      message = $("#messageInput").val().trim();
+
+      firebase.database().ref().set({
+          name:name,
+          email:email,
+          message:message
+      })
+  })
