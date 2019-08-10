@@ -15,54 +15,54 @@
 // }
 //   firebase.initializeApp(firebaseConfig);
 
-var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670,151.1957&radius=500&types=food&name=cruise&key=AIzaSyBmm3VMGrk19WBVK6bPPAr639waetupjs0"
+// var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670,151.1957&radius=500&types=food&name=cruise&key=AIzaSyBmm3VMGrk19WBVK6bPPAr639waetupjs0"
 
 
-$(document).ready(function() {
-    $.ajax({
-        url: queryURL,
-        method: 'GET'
-    })
-    })
-
-
-
-new google.maps.places.Autocomplete(document.getElementById('autocomplete)'));
-
-var ac = new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
-google.maps.event.addListener(ac, 'places_changed', function () {
-    var place = ac.getPlace();
-    console.log(place.formatted_address);
-    console.log(place.url);
-    console.log(place.geometry.location);
-});
+// $(document).ready(function() {
+//     $.ajax({
+//         url: queryURL,
+//         method: 'GET'
+//     })
+//     })
 
 
 
-var firebaseConfig = {
-    apiKey: "AIzaSyD_y8T7JQwWOiJl6IKjqONc38NCSZsyxjo",
-    authDomain: "project1-d0975.firebaseapp.com",
-    databaseURL: "https://project1-d0975.firebaseio.com",
-    projectId: "project1-d0975",
-    storageBucket: "",
-    messagingSenderId: "1071282302812",
-    appId: "1:1071282302812:web:b82c38f60e24a6ea"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+// new google.maps.places.Autocomplete(document.getElementById('autocomplete)'));
 
-  var name = "";
-  var email = "";
-  var message = "";
+// var ac = new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
+// google.maps.event.addListener(ac, 'places_changed', function () {
+//     var place = ac.getPlace();
+//     console.log(place.formatted_address);
+//     console.log(place.url);
+//     console.log(place.geometry.location);
+// });
 
-  $("#addEmail").on("click", function(){
-      name = $("#nameInput").val().trim();
-      email = $("#emailInput").val().trim();
-      message = $("#messageInput").val().trim();
 
-      firebase.database().ref().set({
-          name:name,
-          email:email,
-          message:message
-      })
-  })
+
+// var firebaseConfig = {
+//     apiKey: "AIzaSyD_y8T7JQwWOiJl6IKjqONc38NCSZsyxjo",
+//     authDomain: "project1-d0975.firebaseapp.com",
+//     databaseURL: "https://project1-d0975.firebaseio.com",
+//     projectId: "project1-d0975",
+//     storageBucket: "",
+//     messagingSenderId: "1071282302812",
+//     appId: "1:1071282302812:web:b82c38f60e24a6ea"
+//   };
+//   // Initialize Firebase
+//   firebase.initializeApp(firebaseConfig);
+
+//   var name = "";
+//   var email = "";
+//   var message = "";
+
+//   $("#addEmail").on("click", function(){
+//       name = $("#nameInput").val().trim();
+//       email = $("#emailInput").val().trim();
+//       message = $("#messageInput").val().trim();
+
+//       firebase.database().ref().set({
+//           name:name,
+//           email:email,
+//           message:message
+//       })
+//   })
