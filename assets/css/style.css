@@ -1,0 +1,45 @@
+
+html{ 
+    font-family: 'Baumans', cursive;
+}
+#myCarousel {
+    height: auto;
+    width: auto;
+    overflow: hidden;
+  }
+  .center{
+    display: flex;
+    justify-content: center;
+    background-color:black;
+
+}
+  .slide{
+      width: 50%;
+      border: 20px solid black;
+      
+  }
+ 
+  footer{
+      min-height: 200px;
+  }
+body{
+    background-color:#E6EEFF;
+}
+
+.navbar {
+    float: right;  
+}
+
+.jumbotron {
+    background-color: aliceblue;
+}
+
+
+#contact {
+    text-align: center;
+  
+  
+  
+  
+  
+}
