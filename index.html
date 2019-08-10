@@ -12,14 +12,19 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.js"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/reset.css">
+  <script src="assets/javascript.js"></script>
   <link rel="text" href="assets/mapshtml/index.html">
 
-  <script
-    src="https://maps.googleapis.com/maps/api/place/autocomplete/json?input=1600+apisensor=false&libraries=places&key=AIzaSyDSZ5sZPeJ_H6aGbBopoN_M7L7gBA2nwdk"></script>
-  <script type="javascript/text" src="assets/javascript.js"></script>
+  <!-- <script
+    src="https://maps.googleapis.com/maps/api/place/autocomplete/json?input=1600+apisensor=false&libraries=places&key=AIzaSyDSZ5sZPeJ_H6aGbBopoN_M7L7gBA2nwdk"></script> -->
+  <!-- <script src="./assets/javascript.js"></script> -->
 </head>
 
 <body>
@@ -83,8 +88,9 @@
           <img src="assets/images/balance-rocks.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Strength & Flexibility</h5>
-            <p class="card-text">Active, dynamic styles of yoga are great for strength training. They can be seen as the equivalent to doing a lot of reps of body-weight exercises.</p></br></br>
-            <a href="strength/strength.html" target="_blank" class="btn btn-primary">Go somewhere</a>
+            <p class="card-text">Active, dynamic styles of yoga are great for strength training. They can be seen as the
+              equivalent to doing a lot of reps of body-weight exercises.</p></br></br>
+            <a href="strength/strength.html" target="_blank" class="btn btn-primary">Learn more</a>
           </div>
         </div>
         <div class="card">
@@ -92,17 +98,15 @@
           <div class="card-body">
             <h5 class="card-title">Stress Relief & Meditation</h5>
             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <a href="stress/stress.html" target="_blank" class="btn btn-primary">Go somewhere</a>
+            <a href="stress/stress.html" target="_blank" class="btn btn-primary">Learn more</a>
           </div>
         </div>
         <div class="card">
           <img src="assets/images/gratitude-sunrise.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Slow Yoga & Senior Yoga</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content.
-              This card has even longer content than the first to show that equal height action.</p>
-            <a href="senior/senior.html" target="_blank" class="btn btn-primary">Go somewhere</a>
+            <p class="card-text">The benefits of yoga for seniors are much the same as those for the general population: increased muscle tone, balance (which is particularly important), strength, and improved mood.</p>
+            <a href="senior/senior.html" target="_blank" class="btn btn-primary">Learn more</a>
           </div>
         </div>
       </div>
@@ -114,7 +118,6 @@
 
             <ul class="fa-ul mb-4 ml-0">
               <li id="mail-address">
-                <!--               Replace with your email address -->
                 <i class="fas fa-envelope-open mr-2 contact-icons"></i>youremail@mail.com</a>
               </li>
               <li>(
@@ -129,18 +132,18 @@
               Leave your message below and we will be back to you as soon as possible.
             </p>
 
-            <form class="contact-form d-flex flex-column align-items-center">
+            <form class="contact-form d-flex flex-column align-items-center" id="contactForm" data-parsley-validate="">
               <!-- action="https://formspree.io/youremail@mail.com" method="POST"> -->
               <div class="form-group w-75">
-                <input type="name" class="form-control" id="nameInput" placeholder="Name" name="name" required />
+                <input type="name" class="form-control" id="nameInput" placeholder="Name" name="name" required=""/>
               </div>
               <div class="form-group w-75">
-                <input type="email" class="form-control" id="emailInput" placeholder="Email" name="name" required />
+                <input type="email" class="form-control" id="emailInput" data-parsley-validate="" placeholder="Email" name="name" required=""/>
               </div>
 
               <div class="form-group w-75">
                 <textarea class="form-control" type="text" id="messageInput" placeholder="Message" rows="4" name="name"
-                  required></textarea>
+                  required=""></textarea>
               </div>
 
               <button type="submit" class="btn btn-submit btn-info w-55" id="addEmail">Submit</button>
@@ -149,9 +152,6 @@
         </section>
       </div>
     </div>
-
-
-  
 
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
       integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
