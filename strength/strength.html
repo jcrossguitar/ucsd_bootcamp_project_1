@@ -11,10 +11,57 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="strength.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?Libraries=places&key=AIzaSyDSZ5sZPeJ_H6aGbBopoN_M7L7gBA2nwdk">
+    </script>
 
 
     <title>Document</title>
 </head>
+<script>
+    var map; 
+    var infowindow;
+    function initialize() {
+        var center = new google.maps.LatLng(32.715736,-117.161087);
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: center,
+            zoom: 11
+        });
+
+        var request = {
+            location: center,
+            radius: 8047,
+            types: ['yoga']
+        };
+        infowindow = new google.maps.InfoWindow();
+
+        var service = new google.maps.places.PlacesService(map);
+
+        service.nearbySearch(request, callback);
+    }
+
+    function callback(results, status) {
+        is(status == google.maps.places.PlacesServiceStatus.OK)
+            for (var i = 0; i < results.length; i++){
+                createMarker(results[i]);
+            }
+    }
+
+    function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindw.setContent(place.name);
+            infowindow.open(map,this);
+        });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
 <body>
  
       <div class="jumbotron jumbotron-fluid">
@@ -42,13 +89,19 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img class="d-block w-100" src="../assets/images/savasana.jpg" alt="First slide">
+                <img class="d-block w-100" src="../assets/images/strengthChairpose.jpg" alt="First slide" style="height:300px">
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="../assets/images/gratitude-sunrise.jpg" alt="Second slide">
+                <img class="d-block w-100" src="../assets/images/strengthFlexibilityPose.jpg" alt="Second slide" style="height:300px">
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="../assets/images/warrior pose.jpg" alt="Third slide">
+                <img class="d-block w-100" src="../assets/images/strengthHalfMoonPose.jpg" alt="Third slide" style="height:300px">
+                </div>
+              <div class="carousel-item">
+              <img class="d-block w-100" src="../assets/images/strengthPlankPose.jpg" alt="Forth slide" style="height:300px">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="../assets/images/strengthWarriorPose.jpg" alt="Fifth slide" style="height:300px">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -61,6 +114,12 @@
             </a>
         </div>
     </div>
+    <div class="row">
+        <div class="col-6-12" id="map" style="width:500px;height:500px;margin:0px;padding:0px">
+    </div>
+    </div>
+
+
 
     <footer>
 
