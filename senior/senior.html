@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?Libraries=places&key=AIzaSyDSZ5sZPeJ_H6aGbBopoN_M7L7gBA2nwdk">
+    </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -12,45 +13,65 @@
 
     <title>Document</title>
 </head>
-<body>
-    
-    <p>This page is for the Google Maps portion of the project</p>
+<script>
+        var map; 
+        var infowindow;
+        function initialize() {
+            var center = new google.maps.LatLng(32.715736,-117.161087);
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: center,
+                zoom: 11
+            });
 
-
-    <h3>This will be the section you type your search results in</h3>
-    <form action="/action_page.php">
-        Search for yoga:
-        <br>
-        <br>
-        <input type="text" name="firstname" value="Enter your search here">
-        <br><br>
-        <input type="submit" value="Submit">
-    </form> 
-    <br>
-    <br>
-    <div id="googleMap" style="width:100%;height:400px"></div>
-
-    <script>
-    function myMap() {
-        var mapProp = {
-            center:new google.maps.LatLng(32.715736,-117.161087),
-            zoom:5,
+            var request = {
+                location: center,
+                radius: 8047,
+                types: ['yoga']
             };
-        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-            }
+            infowindow = new google.maps.InfoWindow();
 
+            var service = new google.maps.places.PlacesService(map);
+
+            service.nearbySearch(request, callback);
+        }
+
+        function callback(results, status) {
+            is(status == google.maps.places.PlacesServiceStatus.OK)
+                for (var i = 0; i < results.length; i++){
+                    createMarker(results[i]);
+                }
+        }
+
+        function createMarker(place) {
+            var placeLoc = place.geometry.location;
+            var marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindw.setContent(place.name);
+                infowindow.open(map,this);
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<style>
+                html, body {
+                    margin: 0px;
+                    padding: 0px;
+                }
         
-    </script>
-
-
-
-
+                #map {
+                        grid-column-end:  12       
+                        }
+</style>
+<body>
+    <div class="row">
+        <div class="col-6-12" id="map" style="width:500px;height:500px;margin:0px;padding:0px">
+    </div>
+    </div>
 </body>
 
 </html>
-
-
-
-
-
-
