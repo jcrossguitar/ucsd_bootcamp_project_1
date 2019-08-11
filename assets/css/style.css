@@ -39,9 +39,9 @@ p {
     background-color: aliceblue;
 }
 
-
-
 .contactForm {
     text-align: center;
- 
+    align-content: center;
 }
+
+
