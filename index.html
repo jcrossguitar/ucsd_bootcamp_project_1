@@ -9,17 +9,17 @@
     <title>Getting Into Yoga</title>
     <!-- key 1: AIzaSyBmm3VMGrk19WBVK6bPPAr639waetupjs0 -->
     <!-- key 2: AIzaSyDSZ5sZPeJ_H6aGbBopoN_M7L7gBA2nwdk -->
-    <link href="https://fonts.googleapis.com/css?family=Baumans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baumans&display=swap" rel="stylesheet">
     <link rel="text" href="assets/mapshtml/index.html">
     ​
     <!-- <script
@@ -135,7 +135,6 @@
                 <section class="resume-section p-4 p-lg-5 text-center" id="contact">
                     <div class="my-auto">
                         <h2 class="mb-4"> Want more information? Questions? Comments? </h2>
-                        ​
                         <ul class="fa-ul mb-4 ml-0">
                             <li id="mail-address">
                                 <i class="fas fa-envelope-open mr-2 contact-icons"></i>youremail@mail.com</a>
@@ -147,11 +146,9 @@
                                 <i class="fas fa-map-marker-alt mr-2 contact-icons"></i>San Diego, CA
                             </li>
                         </ul>
-                        ​
                         <p>
-                            Leave your message below and we will be back to you as soon as possible.
+                          Leave your message below and we will be back to you as soon as possible.
                         </p>
-                        ​
                         <form class="contact-form d-flex flex-column align-items-center" id="contactForm"
                             data-parsley-validate="">
                             <!-- action="https://formspree.io/youremail@mail.com" method="POST"> -->
@@ -176,65 +173,6 @@
             </div>
         </div>
         ​
-        ​
-        ​
-        <!-- <script type="text/javascript">
-            $(document).ready(function () {
-                console.log(firebase)​;
-                var firebaseConfig = {
-                    apiKey: "AIzaSyD_y8T7JQwWOiJl6IKjqONc38NCSZsyxjo",
-                    authDomain: "project1-d0975.firebaseapp.com",
-                    databaseURL: "https://project1-d0975.firebaseio.com",
-                    projectId: "project1-d0975",
-                    storageBucket: "",
-                    messagingSenderId: "1071282302812",
-                    appId: "1:1071282302812:web:b82c38f60e24a6ea"
-                };
-                // Initialize Firebase
-                firebase.initializeApp(firebaseConfig);​
-                var name = "";
-                var email = "";
-                var message = "";​
-                let db = firebase.database()​;
-                
-                var instance = $("#contactForm").parsley();
-
-                $("#addEmail").on("click", function(e) {
-                    e.preventDefault();
-
-                    name = $("#nameInput").val().trim();
-                    email = $("#emailInput").val().trim();
-                    message = $("#messageInput").val().trim();
-
-                    console.log(name)
-                    console.log(email)
-                    console.log(message)
-
-                    if(instance.isValid()) {
-                        $("#contactForm").css("background-color", "green");
-
-                        db.ref().push({
-                            name: name,
-                            email: email,
-                            message: message
-                        });
-
-                        // Clear form
-                        $("#nameInput").val("");
-                        $("#emailInput").val("");
-                        $("#messageInput").val("");
-                    }
-                    else {
-                        $("#contactForm").css("background-color", "red");
-                    }
-
-                    // function myFunction() {
-                    //     document.getElementById("contactForm").reset();
-                    // }
-                });
-
-            })​
-        </script> -->
         <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
             integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous">
         </script>
