@@ -1,6 +1,6 @@
 $(document).ready(function() {
     console.log('LOADED STRENGTH JS')
     $('.carousel').carousel({
-      interval: 5000
+      interval: 4000
     });
   })
