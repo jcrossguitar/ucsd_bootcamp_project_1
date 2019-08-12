@@ -45,4 +45,11 @@ p {
     align-content: center;
 }
 
+#player {
+    margin: 20px;
+    padding: 20px;
+    float: left;
+
+}
+
 
