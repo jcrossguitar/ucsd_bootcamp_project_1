@@ -7,12 +7,12 @@
 .center {
     display: flex;
     justify-content: center;
-    background-color:black;
+    background-color:#126e7c;  
 }
 
 .slide {
       width: 50%;
-      border: 20px solid black;
+      border: 20px solid white;
 }
  
 footer {
