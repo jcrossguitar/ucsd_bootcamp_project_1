@@ -20,7 +20,7 @@ footer {
     }
 
 body {
-    background-color:#E6EEFF;
+    background-color:rgb(185, 214, 214);
     font-family: 'Baumans', cursive;
 }
 
@@ -36,7 +36,8 @@ p {
 }
 
 .jumbotron {
-    background-color: aliceblue;
+    background-color: rgb(54, 125, 146);
+    color: #fff;
 }
 
 .contactForm {
