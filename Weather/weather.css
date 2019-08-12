@@ -4,4 +4,8 @@
     width: 60%;
 }
 
+nav{
+    float: right;
+}
+
 input[type="text"]
