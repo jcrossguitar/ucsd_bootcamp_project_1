@@ -3,12 +3,12 @@
         // creates a click function for submitting the city searched
 $(document).ready(function() {
     $("#submitWeather").click(function(){
-                    
+                    console.log('search...')
                     // creating a variable for city
-        var city = $("city").val();
+        var city = $("#city").val();
 
         // if the city value is not blank, run ajax call to request information from the server
-        if(city !=''){
+        if(city !==''){
         // ajax call
             $.ajax({
                 url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=imperial" + 
